@@ -1,16 +1,22 @@
 const mongoose = require('mongoose')
 const Document=require('./Document')
 
+const express=require('express');
+
+
+const PORT=process.env.PORT || 3001
+
+
+
 const connect=async ()=>{
     mongoose.connect('mongodb+srv://mohammadzafeer2610:esmGOizl74ppzwRm@google-docs-clone.7g98h.mongodb.net/?retryWrites=true&w=majority&appName=google-docs-clone').then(()=>console.log('Database connected successfully')).catch((err)=>console.log(err));
 }
 connect()
 
-const PORT=process.env.PORT || 3001
 
 const io=require('socket.io')(PORT,{
     cors: {
-        origin: ['https://google-docs-clone-frontend-kappa.vercel.app/'],
+        origin: ['http://localhost:3000'],
         methods: ['GET', 'POST']
     }
 })
@@ -29,7 +35,7 @@ io.on('connection',socket=>{
             await Document.findByIdAndUpdate(documentId,{data})
         })
     })
-    
+   
 })
 
 const defaultValue=''
