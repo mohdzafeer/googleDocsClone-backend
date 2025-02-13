@@ -6,7 +6,9 @@ const connect=async ()=>{
 }
 connect()
 
-const io=require('socket.io')(3001,{
+const PORT=process.env.PORT || 3001
+
+const io=require('socket.io')(PORT,{
     cors: {
         origin: ['https://google-docs-clone-frontend-kappa.vercel.app'],
         methods: ['GET', 'POST']
