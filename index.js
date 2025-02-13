@@ -8,7 +8,7 @@ connect()
 
 const io=require('socket.io')(3001,{
     cors: {
-        origin: ['https://google-docs-clone-frontend-orpin.vercel.app'],
+        origin: ['https://google-docs-clone-frontend-kappa.vercel.app'],
         methods: ['GET', 'POST']
     }
 })
