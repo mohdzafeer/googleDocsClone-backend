@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Document=require('./Document')
 
-const express=require('express');
+
 
 
 const PORT=process.env.PORT || 3001
@@ -16,7 +16,7 @@ connect()
 
 const io=require('socket.io')(PORT,{
     cors: {
-        origin: ['http://localhost:3000'],
+        origin: ['https://googledocsclone-frontend.onrender.com'],
         methods: ['GET', 'POST']
     }
 })
