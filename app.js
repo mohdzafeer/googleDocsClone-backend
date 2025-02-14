@@ -16,7 +16,7 @@ connect()
 
 const io=require('socket.io')(PORT,{
     cors: {
-        origin: ['https://googledocsclone-frontend.onrender.com'],
+        origin: ['https://google-docs-clone-frontend-git-master-mohammad-zafeers-projects.vercel.app'],
         methods: ['GET', 'POST']
     }
 })
